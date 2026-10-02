@@ -1,18 +1,259 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maré de Bets</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maré de Bets — Apostas esportivas e cassino</title>
+  <meta name="description" content="Maré de Bets: aposte em esportes e jogue no cassino online com segurança e diversão.">
+
+  <!-- Fontes do Google Fonts: Baloo 2 (títulos, arredondada) + Inter (textos) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-   <div>
-       <p>
-           eae
-           moises
-           teste
-       </p>
-   </div>
+
+  <!-- ===================== CABEÇALHO ===================== -->
+  <header class="cabecalho">
+    <div class="container cabecalho__conteudo">
+
+      <!-- Checkbox escondido: truque 100% CSS para abrir/fechar o menu no celular, sem JavaScript -->
+      <input type="checkbox" id="menu-toggle" class="menu-toggle">
+      <label for="menu-toggle" class="menu-botao" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </label>
+
+      <nav class="cabecalho__nav">
+        <ul>
+          <li><a href="#esportes">Apostas Esportivas</a></li>
+          <li><a href="#cassino">Cassino</a></li>
+        </ul>
+      </nav>
+
+      <!-- Logo: recorte da arte oficial do grupo (header que já estava em uso) -->
+      <a href="#topo" class="cabecalho__logo">
+        <img src="assets/img/logo-header.png" alt="Maré de Bets" class="cabecalho__logo-imagem">
+      </a>
+
+      <div class="cabecalho__acoes">
+        <a href="#" class="botao botao--contorno">Registrar</a>
+        <a href="#" class="botao botao--cheio">Entrar</a>
+      </div>
+
+    </div>
+  </header>
+
+  <main id="topo">
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero">
+      <div class="container hero__conteudo">
+        <div class="hero__texto">
+          <!-- TEXTO: troque pelo título principal escolhido pelo grupo -->
+          <h1>Pega a sua maré e vem apostar</h1>
+          <!-- TEXTO: troque pelo parágrafo de apresentação do site -->
+          <p class="hero__descricao">
+            Futebol, basquete, cassino e muito mais em um só lugar. Crie sua conta
+            em poucos minutos e aposte com segurança, direto da Maré pra você.
+          </p>
+          <div class="hero__cta">
+            <a href="#" class="botao botao--cheio botao--grande">Criar conta grátis</a>
+            <a href="#esportes" class="botao botao--contorno botao--grande">Ver apostas de hoje</a>
+          </div>
+        </div>
+
+        <div class="hero__imagem">
+          <!-- Imagem principal da seção (substitua pela arte/foto que o grupo escolher) -->
+          <!-- IMAGEM: coloque aqui uma arte do hero, ex: assets/img/hero.jpg -->
+          <img src="Assets/img/CassinoMain.jpg" alt="Ilustração de apostas esportivas da Maré de Bets">
+        </div>
+      </div>
+
+      <!-- Divisor em forma de onda, remetendo à "maré" -->
+      <svg class="onda" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,32 C240,80 480,0 720,24 C960,48 1200,16 1440,40 L1440,80 L0,80 Z"></path>
+      </svg>
+    </section>
+
+    <!-- ===================== COMO FUNCIONA ===================== -->
+    <section class="como-funciona">
+      <div class="container">
+        <h2>Como funciona</h2>
+        <p class="secao__subtitulo">Três passos simples pra começar a apostar.</p>
+
+        <ol class="passos">
+          <li class="passo">
+            <span class="passo__numero">1</span>
+            <h3>Cadastre-se</h3>
+            <!-- TEXTO: ajuste a descrição de cada passo -->
+            <p>Crie sua conta com nome, e-mail e senha. Rápido e gratuito.</p>
+          </li>
+          <li class="passo">
+            <span class="passo__numero">2</span>
+            <h3>Deposite</h3>
+            <p>Escolha a forma de pagamento e adicione saldo à sua carteira.</p>
+          </li>
+          <li class="passo">
+            <span class="passo__numero">3</span>
+            <h3>Aposte</h3>
+            <p>Escolha o jogo, defina o valor e acompanhe o resultado ao vivo.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===================== APOSTAS ESPORTIVAS ===================== -->
+    <section id="esportes" class="esportes">
+      <div class="container">
+        <h2>Apostas em destaque</h2>
+        <p class="secao__subtitulo">Confira os jogos de hoje e escolha a sua odd.</p>
+
+        <div class="grade-cartoes">
+
+          <!-- Cartão de jogo (repita este bloco para cada partida) -->
+          <article class="cartao-jogo">
+            <!-- IMAGEM: escudo ou banner do campeonato -->
+            <img src="assets/img/jogo-1.jpg" alt="Campeonato Carioca" class="cartao-jogo__imagem">
+            <div class="cartao-jogo__corpo">
+              <span class="cartao-jogo__liga">Campeonato Carioca</span>
+              <!-- TEXTO: nomes dos times do confronto -->
+              <p class="cartao-jogo__confronto">Flamengo <span>x</span> Fluminense</p>
+              <span class="cartao-jogo__horario">Hoje às 20h</span>
+              <div class="cartao-jogo__odds">
+                <button type="button" class="odd">Casa <strong>1.85</strong></button>
+                <button type="button" class="odd">Empate <strong>3.20</strong></button>
+                <button type="button" class="odd">Fora <strong>4.10</strong></button>
+              </div>
+            </div>
+          </article>
+
+          <article class="cartao-jogo">
+            <img src="assets/img/jogo-2.jpg" alt="Brasileirão" class="cartao-jogo__imagem">
+            <div class="cartao-jogo__corpo">
+              <span class="cartao-jogo__liga">Brasileirão Série A</span>
+              <p class="cartao-jogo__confronto">Vasco <span>x</span> Botafogo</p>
+              <span class="cartao-jogo__horario">Sábado às 18h30</span>
+              <div class="cartao-jogo__odds">
+                <button type="button" class="odd">Casa <strong>2.10</strong></button>
+                <button type="button" class="odd">Empate <strong>3.05</strong></button>
+                <button type="button" class="odd">Fora <strong>3.40</strong></button>
+              </div>
+            </div>
+          </article>
+
+          <article class="cartao-jogo">
+            <img src="assets/img/jogo-3.jpg" alt="NBA" class="cartao-jogo__imagem">
+            <div class="cartao-jogo__corpo">
+              <span class="cartao-jogo__liga">NBA</span>
+              <p class="cartao-jogo__confronto">Lakers <span>x</span> Celtics</p>
+              <span class="cartao-jogo__horario">Domingo às 22h</span>
+              <div class="cartao-jogo__odds">
+                <button type="button" class="odd">Casa <strong>1.95</strong></button>
+                <button type="button" class="odd">Empate <strong>—</strong></button>
+                <button type="button" class="odd">Fora <strong>1.90</strong></button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CASSINO ===================== -->
+    <section id="cassino" class="cassino">
+      <div class="container cassino__conteudo">
+        <div class="cassino__texto">
+          <h2>Cassino Maré</h2>
+          <!-- TEXTO: ajuste a chamada do cassino -->
+          <p>Caça-níqueis, roleta e cartas clássicas. Gire, jogue e divirta-se com a casa da Maré.</p>
+          <a href="#" class="botao botao--cheio">Explorar cassino</a>
+        </div>
+
+        <div class="grade-cartoes grade-cartoes--cassino">
+          <!-- IMAGEM: capa de cada jogo de cassino -->
+          <img src="Assets/img/CacaNiquel.png" alt="Caça-níqueis Maré de Ouro" class="cartao-mini">
+          <img src="Assets/img/Roleta.png" alt="Roleta da Maré" class="cartao-mini">
+          <img src="Assets/img/BlackJack.png" alt="Blackjack" class="cartao-mini">
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PROMOÇÕES ===================== -->
+    <section id="promocoes" class="promocoes">
+      <div class="container cartao-promocao">
+        <div>
+          <!-- TEXTO: título e texto da promoção -->
+          <h2>Bônus de boas-vindas</h2>
+          <p>Cadastre-se hoje e ganhe até R$200 em créditos de aposta no seu primeiro depósito.</p>
+        </div>
+        <a href="#" class="botao botao--cheio botao--grande">Quero meu bônus</a>
+      </div>
+    </section>
+
+    <!-- ===================== JOGO RESPONSÁVEL ===================== -->
+    <section class="responsavel">
+      <div class="container responsavel__conteudo">
+        <h2>Jogue com responsabilidade</h2>
+        <!-- TEXTO: texto de jogo responsável definido pelo grupo -->
+        <p>
+          Apostar deve ser uma forma de diversão, não uma fonte de renda. Proibido para
+          menores de 18 anos. Se o jogo deixou de ser divertido, procure ajuda.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== RODAPÉ ===================== -->
+  <footer id="contato" class="rodape">
+    <div class="container rodape__grade">
+
+      <div class="rodape__sobre">
+        <img src="assets/img/logo.png" alt="Logo Maré de Bets" width="40" height="40">
+        <!-- TEXTO: uma frase curta sobre o projeto/grupo -->
+        <p>Projeto desenvolvido por alunos de Programação Web do Redes da Maré.</p>
+      </div>
+
+      <div class="rodape__coluna">
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="#esportes">Apostas Esportivas</a></li>
+          <li><a href="#cassino">Cassino</a></li>
+          <li><a href="#promocoes">Promoções</a></li>
+        </ul>
+      </div>
+
+      <div class="rodape__coluna">
+        <h4>Contato</h4>
+        <!-- TEXTO: dados de contato reais do grupo, se quiserem -->
+        <ul>
+          <li><a href="mailto:contato@maredebets.com.br">contato@maredebets.com.br</a></li>
+          <li><a href="tel:+5521999999999">(21) 99999-9999</a></li>
+          <li>Vila do João, Maré — Rio de Janeiro</li>
+        </ul>
+      </div>
+
+      <div class="rodape__coluna">
+        <h4>Redes sociais</h4>
+        <div class="rodape__redes">
+          <!-- Ícones em SVG puro, sem bibliotecas externas -->
+          <a href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" width="22" height="22"><path d="M12 2.2c3.2 0 3.6 0 4.9.07 1.2.06 2.1.26 2.6.44.6.23 1.03.5 1.5.97.47.47.74.9.97 1.5.18.5.38 1.4.44 2.6.06 1.3.07 1.7.07 4.9s0 3.6-.07 4.9c-.06 1.2-.26 2.1-.44 2.6a4.4 4.4 0 01-.97 1.5c-.47.47-.9.74-1.5.97-.5.18-1.4.38-2.6.44-1.3.06-1.7.07-4.9.07s-3.6 0-4.9-.07c-1.2-.06-2.1-.26-2.6-.44a4.4 4.4 0 01-1.5-.97 4.4 4.4 0 01-.97-1.5c-.18-.5-.38-1.4-.44-2.6C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.9c.06-1.2.26-2.1.44-2.6.23-.6.5-1.03.97-1.5.47-.47.9-.74 1.5-.97.5-.18 1.4-.38 2.6-.44C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.14 0-3.5 0-4.75.07-1 .05-1.6.22-1.95.36-.5.2-.85.42-1.22.8-.38.37-.6.72-.8 1.22-.14.36-.3.95-.36 1.95C2.8 8.5 2.8 8.86 2.8 12s0 3.5.07 4.75c.05 1 .22 1.6.36 1.95.2.5.42.85.8 1.22.37.38.72.6 1.22.8.36.14.95.3 1.95.36 1.25.07 1.6.07 4.75.07s3.5 0 4.75-.07c1-.05 1.6-.22 1.95-.36.5-.2.85-.42 1.22-.8.38-.37.6-.72.8-1.22.14-.36.3-.95.36-1.95.07-1.25.07-1.6.07-4.75s0-3.5-.07-4.75c-.05-1-.22-1.6-.36-1.95a3.3 3.3 0 00-.8-1.22 3.3 3.3 0 00-1.22-.8c-.36-.14-.95-.3-1.95-.36C15.5 4 15.14 4 12 4zm0 3.6a4.4 4.4 0 110 8.8 4.4 4.4 0 010-8.8zm0 1.8a2.6 2.6 0 100 5.2 2.6 2.6 0 000-5.2zm4.6-2a1.03 1.03 0 110 2.06 1.03 1.03 0 010-2.06z"/></svg>
+          </a>
+          <a href="#" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" width="22" height="22"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5.1-1.3A10 10 0 1012 2zm0 1.8a8.2 8.2 0 017 12.5l-.26.42.9 3.3-3.4-.9-.42.25A8.2 8.2 0 1112 3.8zm-3.3 4.1c-.2 0-.5 0-.73.28-.25.28-.95.93-.95 2.27 0 1.33.97 2.63 1.1 2.8.14.2 1.9 2.9 4.6 4.05 2.26.95 2.72.76 3.2.72.5-.05 1.63-.67 1.86-1.3.23-.65.23-1.2.16-1.3-.07-.1-.25-.17-.5-.3-.27-.13-1.63-.8-1.88-.9-.25-.1-.44-.14-.62.13-.18.28-.7.9-.87 1.1-.16.18-.32.2-.6.07-.27-.14-1.13-.42-2.16-1.34-.8-.72-1.34-1.6-1.5-1.87-.16-.27-.02-.42.12-.56.13-.13.27-.33.4-.5.14-.17.18-.28.28-.47.1-.2.05-.37-.02-.5-.07-.14-.6-1.5-.86-2.05-.22-.5-.45-.46-.62-.46z"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="rodape__base">
+      <p>&copy; 2026 Maré de Bets. Todos os direitos reservados. Proibido para menores de 18 anos.</p>
+    </div>
+  </footer>
+
 </body>
 </html>

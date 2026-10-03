@@ -1,104 +1,161 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Criar conta — Maré de Bets</title>
-  <meta name="description" content="Crie sua conta grátis na Maré de Bets em poucos minutos.">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Criar conta — Maré de Bets</title>
+    <meta
+      name="description"
+      content="Crie sua conta grátis na Maré de Bets em poucos minutos."
+    />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-  <!-- ===================== CABEÇALHO (igual ao da página principal) ===================== -->
-  <header class="cabecalho">
-    <div class="container cabecalho__conteudo">
-
-      <input type="checkbox" id="menu-toggle" class="menu-toggle">
-      <label for="menu-toggle" class="menu-botao" aria-label="Abrir menu">
-        <span></span><span></span><span></span>
-      </label>
-
-      <nav class="cabecalho__nav">
-        <ul>
-          <li><a href="index.html#esportes">Apostas Esportivas</a></li>
-          <li><a href="index.html#cassino">Cassino</a></li>
-        </ul>
-      </nav>
-
-      <a href="index.html" class="cabecalho__logo">
-        <img src="assets/img/logo-header.png" alt="Maré de Bets" class="cabecalho__logo-imagem">
-      </a>
-
-      <div class="cabecalho__acoes">
-        <a href="registro.html" class="botao botao--contorno">Registrar</a>
-        <a href="login.html" class="botao botao--cheio">Entrar</a>
-      </div>
-
-    </div>
-  </header>
-
-  <!-- ===================== REGISTRO ===================== -->
-  <main class="registro">
-
-    <!-- Lado esquerdo: arte + título -->
-    <section class="registro__arte">
-      <img src="Assets/img/RegistroArt.jfif" alt="" class="registro__arte-imagem">
-      <div class="registro__arte-texto">
-        <h1>Registre-se hoje, é grátis</h1>
-        <p>Entre na Maré: apostas esportivas e cassino em um só lugar.</p>
-      </div>
-    </section>
-
-    <!-- Lado direito: formulário -->
-    <section class="registro__painel">
-      <form class="formulario" action="#" method="post">
-
-        <img src="assets/img/logo.png" alt="Logo Maré de Bets" width="120" class="formulario__logo">
-        <h2>Crie sua conta</h2>
-
-        <div class="campo">
-          <label for="nome">Nome completo</label>
-          <input type="text" id="nome" name="nome" autocomplete="name" placeholder="Maria da Silva" required>
-        </div>
-
-        <div class="campo">
-          <label for="email">E-mail</label>
-          <input type="email" id="email" name="email" autocomplete="email" placeholder="voce@email.com" required>
-        </div>
-
-        <div class="campo">
-          <label for="nascimento">Data de nascimento</label>
-          <input type="date" id="nascimento" name="nascimento" autocomplete="bday" required>
-          <small>É preciso ter 18 anos ou mais.</small>
-        </div>
-
-        <div class="campo">
-          <label for="senha">Senha</label>
-          <input type="password" id="senha" name="senha" autocomplete="new-password" minlength="8" placeholder="Mínimo de 8 caracteres" required>
-        </div>
-
-        <div class="campo">
-          <label for="senha2">Confirme a senha</label>
-          <input type="password" id="senha2" name="senha2" autocomplete="new-password" minlength="8" required>
-        </div>
-
-        <label class="campo-check">
-          <input type="checkbox" name="maior18" required>
-          <span>Tenho 18 anos ou mais e aceito os termos de uso e a política de privacidade.</span>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ===================== CABEÇALHO (igual ao da página principal) ===================== -->
+    <header class="cabecalho">
+      <div class="container cabecalho__conteudo">
+        <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+        <label for="menu-toggle" class="menu-botao" aria-label="Abrir menu">
+          <span></span><span></span><span></span>
         </label>
 
-        <button type="submit" class="botao botao--cheio botao--grande formulario__enviar">Cadastrar-se</button>
+        <nav class="cabecalho__nav">
+          <ul>
+            <li><a href="index.html#esportes">Apostas Esportivas</a></li>
+            <li><a href="index.html#cassino">Cassino</a></li>
+          </ul>
+        </nav>
 
-        <p class="formulario__login">Já tem conta? <a href="login.html">Entrar</a></p>
-      </form>
-    </section>
+        <a href="index.html" class="cabecalho__logo">
+          <img
+            src="assets/img/logo-header.png"
+            alt="Maré de Bets"
+            class="cabecalho__logo-imagem"
+          />
+        </a>
 
-  </main>
+        <div class="cabecalho__acoes">
+          <a href="registro.html" class="botao botao--contorno">Registrar</a>
+          <a href="login.html" class="botao botao--cheio">Entrar</a>
+        </div>
+      </div>
+    </header>
 
-</body>
+    <!-- ===================== REGISTRO ===================== -->
+    <main class="registro">
+      <!-- Lado esquerdo: arte + título -->
+      <section class="registro__arte">
+        <img
+          src="Assets/img/RegistroArt.jfif"
+          alt=""
+          class="registro__arte-imagem"
+        />
+        <div class="registro__arte-texto">
+          <h1>Registre-se hoje, é grátis</h1>
+          <p>Entre na Maré: apostas esportivas e cassino em um só lugar.</p>
+        </div>
+      </section>
+
+      <!-- Lado direito: formulário -->
+      <section class="registro__painel">
+        <form class="formulario" action="#" method="post">
+          <img
+            src="assets/img/logo.png"
+            alt="Logo Maré de Bets"
+            width="120"
+            class="formulario__logo"
+          />
+          <h2>Crie sua conta</h2>
+
+          <div class="campo">
+            <label for="nome">Nome completo</label>
+            <input
+              type="text"
+              id="nome"
+              name="nome"
+              autocomplete="name"
+              placeholder="Maria da Silva"
+              required
+            />
+          </div>
+
+          <div class="campo">
+            <label for="email">E-mail</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              autocomplete="email"
+              placeholder="voce@email.com"
+              required
+            />
+          </div>
+
+          <div class="campo">
+            <label for="nascimento">Data de nascimento</label>
+            <input
+              type="date"
+              id="nascimento"
+              name="nascimento"
+              autocomplete="bday"
+              required
+            />
+            <small>É preciso ter 18 anos ou mais.</small>
+          </div>
+
+          <div class="campo">
+            <label for="senha">Senha</label>
+            <input
+              type="password"
+              id="senha"
+              name="senha"
+              autocomplete="new-password"
+              minlength="8"
+              placeholder="Mínimo de 8 caracteres"
+              required
+            />
+          </div>
+
+          <div class="campo">
+            <label for="senha2">Confirme a senha</label>
+            <input
+              type="password"
+              id="senha2"
+              name="senha2"
+              autocomplete="new-password"
+              minlength="8"
+              required
+            />
+          </div>
+
+          <label class="campo-check">
+            <input type="checkbox" name="maior18" required />
+            <span
+              >Tenho 18 anos ou mais e aceito os termos de uso e a política de
+              privacidade.</span
+            >
+          </label>
+
+          <button
+            type="submit"
+            class="botao botao--cheio botao--grande formulario__enviar"
+          >
+            Cadastrar-se
+          </button>
+
+          <p class="formulario__login">
+            Já tem conta? <a href="login.html">Entrar</a>
+          </p>
+        </form>
+      </section>
+    </main>
+  </body>
 </html>

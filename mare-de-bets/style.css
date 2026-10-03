@@ -158,8 +158,8 @@ main section {
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   gap: 1.5rem;
-  padding-top: 0.9rem;
-  padding-bottom: 0.9rem;
+  padding-top: 0.0rem;
+  padding-bottom: 0.0rem;
 }
 
 /* Logo centralizada: é a arte oficial do grupo (imagem), por isso não leva fonte própria */
@@ -680,4 +680,221 @@ li.passo {
   .hero__cta .botao {
     text-align: center;
   }
+}
+
+
+/* ===========================================================
+   11) PÁGINA DE REGISTRO (registro.html)
+   Tela dividida: arte à esquerda, formulário à direita.
+   =========================================================== */
+
+/* A regra "main section" do site padroniza o padding; zeramos aqui */
+main.registro section {
+  padding: 0;
+}
+
+.registro {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  min-height: calc(100vh - 90px);
+}
+
+/* ----- Lado da arte ----- */
+.registro__arte {
+  position: relative;
+  background-color: var(--roxo-mare);
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+}
+
+.registro__arte-imagem {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Degradê para o título ficar legível sobre a imagem */
+.registro__arte::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(42, 11, 38, 0.85) 0%, rgba(42, 11, 38, 0) 55%);
+}
+
+.registro__arte-texto {
+  position: relative;
+  z-index: 1;
+  padding: 3rem 2.5rem;
+  max-width: 30rem;
+}
+
+.registro__arte-texto h1 {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  color: var(--branco);
+}
+
+.registro__arte-texto p {
+  margin-top: 0.8rem;
+  color: #EADCE8;
+  font-weight: 500;
+}
+
+/* ----- Lado do formulário ----- */
+.registro__painel {
+  background-color: var(--roxo-profundo);
+  color: var(--texto-claro);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 1.5rem;
+}
+
+.formulario {
+  width: 100%;
+  max-width: 390px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.formulario__logo {
+  margin: 0 auto;
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.formulario h2 {
+  color: var(--branco);
+  font-size: 1.6rem;
+  margin-bottom: 0.2rem;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.campo label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--dourado-suave);
+}
+
+.campo input {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  font-family: var(--fonte-texto);
+  font-size: 1rem;
+  color: var(--branco);
+  background-color: rgba(246, 234, 244, 0.12);
+  border: 1.5px solid rgba(251, 174, 22, 0.55);
+  border-radius: 10px;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+  color-scheme: dark; /* deixa o ícone do calendário claro */
+}
+
+.campo input::placeholder {
+  color: #B79DB4;
+}
+
+.campo input:focus {
+  outline: none;
+  border-color: var(--roxo-neon);
+  background-color: rgba(112, 47, 237, 0.18);
+  box-shadow: 0 0 0 3px rgba(112, 47, 237, 0.45);
+}
+
+/* Só mostra erro depois que a pessoa digitou algo inválido */
+.campo input:user-invalid {
+  border-color: #FF7A8A;
+}
+
+.campo small {
+  font-size: 0.8rem;
+  color: #B79DB4;
+}
+
+.campo-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.85rem;
+  color: #D9C3D6;
+  cursor: pointer;
+}
+
+.campo-check input {
+  width: 1.1rem;
+  height: 1.1rem;
+  margin-top: 0.15rem;
+  accent-color: var(--dourado);
+  flex-shrink: 0;
+}
+
+.formulario__enviar {
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+  font-family: var(--fonte-texto);
+  margin-top: 0.3rem;
+}
+
+.formulario__login {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #D9C3D6;
+}
+
+.formulario__login a {
+  color: var(--dourado-suave);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.formulario__login a:hover {
+  color: var(--branco);
+}
+
+/* ----- Responsivo ----- */
+@media (max-width: 860px) {
+  .registro {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  /* A arte vira uma faixa no topo, o formulário vem logo abaixo */
+  .registro__arte {
+    min-height: 240px;
+  }
+
+  .registro__arte-texto {
+    padding: 2rem 1.5rem;
+  }
+}
+
+
+/* ---------- 12) LOGIN (login.html) ----------
+   Reaproveita os estilos do registro; só acrescenta a linha
+   "manter conectado" + "esqueci minha senha". */
+.formulario__extras {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.formulario__extras a {
+  font-size: 0.85rem;
+  color: var(--dourado-suave);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.formulario__extras a:hover {
+  color: var(--branco);
 }

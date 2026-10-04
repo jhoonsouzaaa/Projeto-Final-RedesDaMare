@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cassino — Maré de Bets</title>
+  <meta name="description" content="Cassino da Maré de Bets: caça-níqueis, roleta e blackjack.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===================== CABEÇALHO (igual ao da index.html) ===================== -->
+  <header class="cabecalho">
+    <div class="container cabecalho__conteudo">
+
+      <input type="checkbox" id="menu-toggle" class="menu-toggle">
+      <label for="menu-toggle" class="menu-botao" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </label>
+
+      <nav class="cabecalho__nav">
+        <ul>
+          <li><a href="index.html#esportes">Apostas Esportivas</a></li>
+          <li><a href="cassino.html" aria-current="page">Cassino</a></li>
+        </ul>
+      </nav>
+
+      <a href="index.html#topo" class="cabecalho__logo">
+        <img src="assets/img/logo-header.png" alt="Maré de Bets" class="cabecalho__logo-imagem">
+      </a>
+
+      <div class="cabecalho__acoes">
+        <a href="#" class="botao botao--contorno">Registrar</a>
+        <a href="#" class="botao botao--cheio">Entrar</a>
+      </div>
+
+    </div>
+  </header>
+
+  <main id="topo">
+
+    <!-- ===================== HERO DO CASSINO ===================== -->
+    <section class="hero hero--cassino">
+      <div class="container hero__conteudo hero__conteudo--centro">
+        <div class="hero__texto">
+          <!-- TEXTO: troque pelo título da página do cassino -->
+          <h1>Cassino Maré</h1>
+          <p class="hero__descricao">
+            Caça-níqueis, roleta e blackjack num só lugar. Escolha o jogo e
+            boa sorte — é tudo por conta da casa da Maré.
+          </p>
+        </div>
+      </div>
+
+      <svg class="onda" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,32 C240,80 480,0 720,24 C960,48 1200,16 1440,40 L1440,80 L0,80 Z"></path>
+      </svg>
+    </section>
+
+    <!-- ===================== CAÇA-NÍQUEIS ===================== -->
+    <section id="caca-niqueis" class="jogo jogo--caca-niqueis">
+      <div class="container jogo__grade">
+
+        <div class="caca-niqueis">
+          <div class="caca-niqueis__maquina">
+            <div class="caca-niqueis__rolo">
+              <span class="simbolo simbolo--fora">🍋</span>
+              <span class="simbolo simbolo--linha">🍒</span>
+              <span class="simbolo simbolo--fora">⭐</span>
+            </div>
+            <div class="caca-niqueis__rolo">
+              <span class="simbolo simbolo--fora">💎</span>
+              <span class="simbolo simbolo--linha">🍒</span>
+              <span class="simbolo simbolo--fora">🍇</span>
+            </div>
+            <div class="caca-niqueis__rolo">
+              <span class="simbolo simbolo--fora">7️⃣</span>
+              <span class="simbolo simbolo--linha">🍒</span>
+              <span class="simbolo simbolo--fora">🍋</span>
+            </div>
+          </div>
+          <a href="#" class="botao botao--cheio botao--grande caca-niqueis__botao">Girar</a>
+        </div>
+
+        <div class="jogo__info">
+          <span class="jogo__etiqueta">Caça-níqueis</span>
+          <h2>Maré de Ouro</h2>
+          <!-- TEXTO: ajuste a descrição do caça-níqueis -->
+          <p>Três rolos, uma linha de pagamento e símbolos clássicos. Combine
+            três iguais na linha do meio e leve o prêmio.</p>
+
+          <table class="tabela-premios">
+            <caption>Tabela de prêmios</caption>
+            <tbody>
+              <tr><td>🍒 🍒 🍒</td><td>x5</td></tr>
+              <tr><td>🍋 🍋 🍋</td><td>x8</td></tr>
+              <tr><td>⭐ ⭐ ⭐</td><td>x15</td></tr>
+              <tr><td>💎 💎 💎</td><td>x30</td></tr>
+              <tr><td>7️⃣ 7️⃣ 7️⃣</td><td>x50</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================== ROLETA ===================== -->
+    <section id="roleta" class="jogo jogo--roleta">
+      <div class="container jogo__grade">
+
+        <div class="jogo__info">
+          <span class="jogo__etiqueta jogo__etiqueta--claro">Roleta</span>
+          <h2>Roleta da Maré</h2>
+          <!-- TEXTO: ajuste a descrição da roleta -->
+          <p>Aposte num número, numa cor ou num grupo de números e aguarde a
+            bolinha parar. Clássica roleta europeia, com uma única casa zero.</p>
+
+          <ul class="lista-apostas">
+            <li><span class="chip chip--vermelho"></span> Vermelho ou preto — paga 1 para 1</li>
+            <li><span class="chip chip--verde"></span> Par ou ímpar — paga 1 para 1</li>
+            <li><span class="chip chip--dourado"></span> Número cheio — paga 35 para 1</li>
+          </ul>
+        </div>
+
+        <div class="roleta">
+          <div class="roleta__roda" aria-hidden="true">
+            <div class="roleta__centro">0</div>
+          </div>
+
+          <!-- Mesa de apostas simplificada -->
+          <div class="mesa-roleta">
+            <span class="roleta-num roleta-num--verde mesa-roleta__zero">0</span>
+            <div class="mesa-roleta__numeros">
+              <!-- linha 1 (topo) -->
+              <span class="roleta-num roleta-num--vermelho">3</span><span class="roleta-num roleta-num--preto">6</span><span class="roleta-num roleta-num--vermelho">9</span><span class="roleta-num roleta-num--vermelho">12</span><span class="roleta-num roleta-num--preto">15</span><span class="roleta-num roleta-num--vermelho">18</span><span class="roleta-num roleta-num--vermelho">21</span><span class="roleta-num roleta-num--preto">24</span><span class="roleta-num roleta-num--vermelho">27</span><span class="roleta-num roleta-num--vermelho">30</span><span class="roleta-num roleta-num--preto">33</span><span class="roleta-num roleta-num--vermelho">36</span>
+              <!-- linha 2 (meio) -->
+              <span class="roleta-num roleta-num--preto">2</span><span class="roleta-num roleta-num--vermelho">5</span><span class="roleta-num roleta-num--preto">8</span><span class="roleta-num roleta-num--preto">11</span><span class="roleta-num roleta-num--vermelho">14</span><span class="roleta-num roleta-num--preto">17</span><span class="roleta-num roleta-num--preto">20</span><span class="roleta-num roleta-num--vermelho">23</span><span class="roleta-num roleta-num--preto">26</span><span class="roleta-num roleta-num--preto">29</span><span class="roleta-num roleta-num--vermelho">32</span><span class="roleta-num roleta-num--preto">35</span>
+              <!-- linha 3 (base) -->
+              <span class="roleta-num roleta-num--vermelho">1</span><span class="roleta-num roleta-num--preto">4</span><span class="roleta-num roleta-num--vermelho">7</span><span class="roleta-num roleta-num--preto">10</span><span class="roleta-num roleta-num--preto">13</span><span class="roleta-num roleta-num--vermelho">16</span><span class="roleta-num roleta-num--vermelho">19</span><span class="roleta-num roleta-num--preto">22</span><span class="roleta-num roleta-num--vermelho">25</span><span class="roleta-num roleta-num--preto">28</span><span class="roleta-num roleta-num--preto">31</span><span class="roleta-num roleta-num--vermelho">34</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================== BLACKJACK ===================== -->
+    <section id="blackjack" class="jogo jogo--blackjack">
+      <div class="container jogo__grade">
+
+        <div class="mesa-blackjack">
+          <div class="mesa-blackjack__mao">
+            <span class="mesa-blackjack__rotulo">Banca</span>
+            <div class="carta">
+              <span class="carta__valor">K</span><span class="carta__naipe carta__naipe--preto">♠</span>
+            </div>
+            <div class="carta carta--virada" aria-label="Carta virada para baixo"></div>
+          </div>
+
+          <div class="mesa-blackjack__mao">
+            <span class="mesa-blackjack__rotulo">Você — 19</span>
+            <div class="carta">
+              <span class="carta__valor">K</span><span class="carta__naipe carta__naipe--vermelho">♥</span>
+            </div>
+            <div class="carta">
+              <span class="carta__valor">9</span><span class="carta__naipe carta__naipe--preto">♣</span>
+            </div>
+          </div>
+
+          <div class="mesa-blackjack__acoes">
+            <a href="#" class="botao botao--cheio">Pedir carta</a>
+            <a href="#" class="botao botao--contorno mesa-blackjack__parar">Parar</a>
+          </div>
+        </div>
+
+        <div class="jogo__info">
+          <span class="jogo__etiqueta">Blackjack</span>
+          <h2>Mesa de Blackjack</h2>
+          <!-- TEXTO: ajuste a descrição do blackjack -->
+          <p>Chegue o mais perto possível de 21 pontos sem estourar. Cartas
+            numéricas valem o próprio número, figuras valem 10 e o Ás vale 1
+            ou 11 — o que for melhor pra sua mão.</p>
+
+          <ul class="lista-apostas">
+            <li><span class="chip chip--dourado"></span> Blackjack na primeira mão paga 3 para 2</li>
+            <li><span class="chip chip--verde"></span> Empate com a banca devolve a aposta</li>
+            <li><span class="chip chip--vermelho"></span> Passar de 21 pontos perde a rodada</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== RODAPÉ (igual ao da index.html) ===================== -->
+  <footer id="contato" class="rodape">
+    <div class="container rodape__grade">
+
+      <div class="rodape__sobre">
+        <img src="assets/img/logo.png" alt="Logo Maré de Bets" width="40" height="40">
+        <p>Projeto desenvolvido por alunos de Programação Web do Redes da Maré.</p>
+      </div>
+
+      <div class="rodape__coluna">
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="index.html#esportes">Apostas Esportivas</a></li>
+          <li><a href="cassino.html">Cassino</a></li>
+          <li><a href="index.html#promocoes">Promoções</a></li>
+        </ul>
+      </div>
+
+      <div class="rodape__coluna">
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="mailto:contato@maredebets.com.br">contato@maredebets.com.br</a></li>
+          <li><a href="tel:+5521999999999">(21) 99999-9999</a></li>
+          <li>Vila do João, Maré — Rio de Janeiro</li>
+        </ul>
+      </div>
+
+      <div class="rodape__coluna">
+        <h4>Redes sociais</h4>
+        <div class="rodape__redes">
+          <a href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" width="22" height="22"><path d="M12 2.2c3.2 0 3.6 0 4.9.07 1.2.06 2.1.26 2.6.44.6.23 1.03.5 1.5.97.47.47.74.9.97 1.5.18.5.38 1.4.44 2.6.06 1.3.07 1.7.07 4.9s0 3.6-.07 4.9c-.06 1.2-.26 2.1-.44 2.6a4.4 4.4 0 01-.97 1.5c-.47.47-.9.74-1.5.97-.5.18-1.4.38-2.6.44-1.3.06-1.7.07-4.9.07s-3.6 0-4.9-.07c-1.2-.06-2.1-.26-2.6-.44a4.4 4.4 0 01-1.5-.97 4.4 4.4 0 01-.97-1.5c-.18-.5-.38-1.4-.44-2.6C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.9c.06-1.2.26-2.1.44-2.6.23-.6.5-1.03.97-1.5.47-.47.9-.74 1.5-.97.5-.18 1.4-.38 2.6-.44C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.14 0-3.5 0-4.75.07-1 .05-1.6.22-1.95.36-.5.2-.85.42-1.22.8-.38.37-.6.72-.8 1.22-.14.36-.3.95-.36 1.95C2.8 8.5 2.8 8.86 2.8 12s0 3.5.07 4.75c.05 1 .22 1.6.36 1.95.2.5.42.85.8 1.22.37.38.72.6 1.22.8.36.14.95.3 1.95.36 1.25.07 1.6.07 4.75.07s3.5 0 4.75-.07c1-.05 1.6-.22 1.95-.36.5-.2.85-.42 1.22-.8.38-.37.6-.72.8-1.22.14-.36.3-.95.36-1.95.07-1.25.07-1.6.07-4.75s0-3.5-.07-4.75c-.05-1-.22-1.6-.36-1.95a3.3 3.3 0 00-.8-1.22 3.3 3.3 0 00-1.22-.8c-.36-.14-.95-.3-1.95-.36C15.5 4 15.14 4 12 4zm0 3.6a4.4 4.4 0 110 8.8 4.4 4.4 0 010-8.8zm0 1.8a2.6 2.6 0 100 5.2 2.6 2.6 0 000-5.2zm4.6-2a1.03 1.03 0 110 2.06 1.03 1.03 0 010-2.06z"/></svg>
+          </a>
+          <a href="#" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" width="22" height="22"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5.1-1.3A10 10 0 1012 2zm0 1.8a8.2 8.2 0 017 12.5l-.26.42.9 3.3-3.4-.9-.42.25A8.2 8.2 0 1112 3.8zm-3.3 4.1c-.2 0-.5 0-.73.28-.25.28-.95.93-.95 2.27 0 1.33.97 2.63 1.1 2.8.14.2 1.9 2.9 4.6 4.05 2.26.95 2.72.76 3.2.72.5-.05 1.63-.67 1.86-1.3.23-.65.23-1.2.16-1.3-.07-.1-.25-.17-.5-.3-.27-.13-1.63-.8-1.88-.9-.25-.1-.44-.14-.62.13-.18.28-.7.9-.87 1.1-.16.18-.32.2-.6.07-.27-.14-1.13-.42-2.16-1.34-.8-.72-1.34-1.6-1.5-1.87-.16-.27-.02-.42.12-.56.13-.13.27-.33.4-.5.14-.17.18-.28.28-.47.1-.2.05-.37-.02-.5-.07-.14-.6-1.5-.86-2.05-.22-.5-.45-.46-.62-.46z"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="rodape__base">
+      <p>&copy; 2026 Maré de Bets. Todos os direitos reservados. Proibido para menores de 18 anos.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

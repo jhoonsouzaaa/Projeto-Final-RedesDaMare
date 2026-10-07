@@ -735,7 +735,6 @@ main.registro section {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 35%; /* mantém o topo, corta só a parte de baixo */
 }
 
 /* Degradê para o título ficar legível sobre a imagem */
@@ -933,18 +932,94 @@ main.registro section {
    externas e sem JavaScript.
    =========================================================== */
 
-/* Hero mais simples, só com texto centralizado */
+/* Hero com texto centralizado + brilho e fichas decorativas no fundo */
+.hero--cassino {
+  position: relative;
+  background-image:
+    radial-gradient(circle at 12% 20%, rgba(112, 47, 237, 0.35), transparent 42%),
+    radial-gradient(circle at 88% 75%, rgba(251, 174, 22, 0.25), transparent 45%);
+}
+
 .hero--cassino .hero__conteudo--centro {
+  position: relative;
+  z-index: 1;
   grid-template-columns: 1fr;
   text-align: center;
   justify-items: center;
-  padding-top: 3rem;
-  padding-bottom: 3.5rem;
+  padding-top: 3.5rem;
+  padding-bottom: 4rem;
+}
+
+.hero--cassino .jogo__etiqueta {
+  margin-bottom: 1rem;
+}
+
+.hero--cassino__titulo {
+  text-shadow:
+    0 0 20px rgba(251, 174, 22, 0.45),
+    0 0 46px rgba(112, 47, 237, 0.4);
 }
 
 .hero--cassino .hero__descricao {
   margin-left: auto;
   margin-right: auto;
+}
+
+/* Atalhos rápidos pros 3 jogos */
+.hero--cassino__atalhos {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin-top: 1.8rem;
+}
+
+.hero--cassino__atalho {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.55rem 1.1rem;
+  border-radius: 999px;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1.5px solid rgba(251, 174, 22, 0.4);
+  color: var(--branco);
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+}
+
+.hero--cassino__atalho:hover {
+  background-color: rgba(251, 174, 22, 0.16);
+  border-color: var(--dourado-suave);
+  transform: translateY(-2px);
+}
+
+/* Fichas de pôquer flutuando ao fundo, só decoração */
+.hero--cassino__fichas {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.ficha-decorativa {
+  position: absolute;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 6px dashed rgba(251, 174, 22, 0.3);
+  background-color: rgba(255, 255, 255, 0.04);
+  animation: flutuar 7s ease-in-out infinite;
+}
+
+.ficha-decorativa--1 { top: 18%; left: 8%; width: 44px; height: 44px; animation-delay: 0s; }
+.ficha-decorativa--2 { top: 62%; left: 15%; border-color: rgba(112, 47, 237, 0.35); animation-delay: 1.2s; }
+.ficha-decorativa--3 { top: 22%; right: 10%; border-color: rgba(112, 47, 237, 0.3); animation-delay: 0.6s; }
+.ficha-decorativa--4 { top: 65%; right: 16%; width: 38px; height: 38px; animation-delay: 1.8s; }
+
+@keyframes flutuar {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-14px) rotate(12deg); }
 }
 
 /* Estrutura comum às 3 seções de jogo: visual de um lado, texto do outro */
@@ -1237,6 +1312,35 @@ main.registro section {
 .caca-niqueis__botao:hover {
   transform: translateY(2px);
   box-shadow: 0 4px 0 #a85e06, 0 6px 10px rgba(0, 0, 0, 0.4);
+}
+
+.tabela-premios {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--branco);
+  border-radius: var(--raio);
+  overflow: hidden;
+  box-shadow: var(--sombra);
+}
+
+.tabela-premios caption {
+  text-align: left;
+  font-weight: 700;
+  padding: 0.8rem 1rem;
+  background-color: var(--ameixa);
+  color: var(--texto-claro);
+}
+
+.tabela-premios td {
+  padding: 0.55rem 1rem;
+  border-top: 1px solid #efe3ec;
+  font-size: 0.95rem;
+}
+
+.tabela-premios td:last-child {
+  text-align: right;
+  font-weight: 700;
+  color: var(--roxo-mare);
 }
 
 /* ---------- Roleta ---------- */
@@ -1537,13 +1641,23 @@ main.registro section {
 }
 
 @media (max-width: 600px) {
+  .caca-niqueis__gabinete {
+    max-width: 280px;
+  }
+
   .caca-niqueis__janela {
     padding: 0.7rem;
-    gap: 0.5rem;
+    gap: 0.4rem;
   }
 
   .caca-niqueis__rolo {
-    width: 62px;
+    width: 58px;
+  }
+
+  .caca-niqueis__botao {
+    width: 68px;
+    height: 68px;
+    font-size: 0.85rem;
   }
 
   .mesa-roleta {
@@ -1566,5 +1680,15 @@ main.registro section {
   .mesa-blackjack {
     padding: 1.8rem 1rem;
     border-radius: 24px;
+  }
+
+  /* Fichas decorativas ficam pequenas demais pra valer a pena no celular */
+  .hero--cassino__fichas {
+    display: none;
+  }
+
+  .hero--cassino__atalho {
+    font-size: 0.82rem;
+    padding: 0.5rem 0.9rem;
   }
 }

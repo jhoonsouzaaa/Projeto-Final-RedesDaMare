@@ -993,78 +993,250 @@ main.registro section {
 }
 
 /* ---------- Caça-níqueis ---------- */
-/* ---------- Caça-níqueis ---------- */
 .caca-niqueis {
+  display: flex;
+  justify-content: center;
+}
+
+.caca-niqueis__gabinete {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
+  width: 100%;
+  max-width: 340px;
+  background: linear-gradient(165deg, var(--roxo-mare) 0%, var(--roxo-profundo) 80%);
+  border: 3px solid var(--dourado);
+  border-radius: 34px 34px 20px 20px;
+  padding: 1.1rem 1.2rem 1.3rem;
+  box-shadow: var(--sombra), 0 0 45px rgba(112, 47, 237, 0.3);
 }
 
-.caca-niqueis__maquina {
-  display: flex;
-  gap: 0.8rem;
+/* Letreiro luminoso com o nome da máquina */
+.caca-niqueis__letreiro {
   background-color: var(--roxo-profundo);
-  border: 4px solid var(--dourado);
-  border-radius: var(--raio);
-  padding: 1.2rem;
-  box-shadow: var(--sombra);
+  border: 1px solid rgba(251, 174, 22, 0.4);
+  border-radius: 999px;
+  padding: 0.5rem 1.5rem;
+  margin-bottom: 0.7rem;
+}
+
+.caca-niqueis__titulo {
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 0.03em;
+  color: var(--dourado-suave);
+  text-shadow:
+    0 0 6px rgba(251, 174, 22, 0.9),
+    0 0 18px rgba(112, 47, 237, 0.6);
+  white-space: nowrap;
+}
+
+/* Fileira de lâmpadas piscando, como num letreiro de cassino */
+.caca-niqueis__lampadas {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.35rem;
+  width: 100%;
+  padding: 0 0.3rem;
+  margin-bottom: 0.8rem;
+}
+
+.caca-niqueis__lampadas span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--dourado-suave);
+  box-shadow: 0 0 6px 1px var(--dourado-suave);
+  animation: piscar 1.6s ease-in-out infinite;
+}
+
+.caca-niqueis__lampadas span:nth-child(3n) {
+  background-color: var(--roxo-neon);
+  box-shadow: 0 0 6px 1px var(--roxo-neon);
+  animation-delay: 0.3s;
+}
+
+.caca-niqueis__lampadas span:nth-child(3n + 1) {
+  animation-delay: 0.6s;
+}
+
+@keyframes piscar {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
+}
+
+/* Janela com os rolos, em painel escuro "encaixado" */
+.caca-niqueis__janela {
+  position: relative;
+  display: flex;
+  gap: 0.6rem;
+  background-color: #1b0a19;
+  border-radius: 14px;
+  padding: 0.9rem;
+  box-shadow:
+    inset 0 6px 16px rgba(0, 0, 0, 0.6),
+    inset 0 0 0 4px rgba(251, 174, 22, 0.25);
+}
+
+/* Setinhas marcando a linha de pagamento, nas bordas da janela */
+.caca-niqueis__seta {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+}
+
+.caca-niqueis__seta--esq {
+  left: -1px;
+  border-right: 9px solid var(--dourado-suave);
+}
+
+.caca-niqueis__seta--dir {
+  right: -1px;
+  border-left: 9px solid var(--dourado-suave);
 }
 
 .caca-niqueis__rolo {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.4rem;
-  background-color: var(--ameixa);
+  justify-content: center;
+  gap: 0.45rem;
+  width: 72px;
+  background: linear-gradient(180deg, #6b3370 0%, var(--ameixa) 55%, #381c3a 100%);
   border-radius: 10px;
-  padding: 0.6rem 0.9rem;
+  padding: 0.65rem 0;
   overflow: hidden;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+/* Reflexo de vidro sobre o rolo */
+.caca-niqueis__rolo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    205deg,
+    rgba(255, 255, 255, 0.22) 0%,
+    rgba(255, 255, 255, 0) 32%
+  );
+  pointer-events: none;
+}
+
+/* Linha de pagamento em destaque no meio do rolo */
+.caca-niqueis__rolo::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 2.5rem;
+  transform: translateY(-50%);
+  background-color: rgba(251, 174, 22, 0.16);
+  border-top: 1px dashed rgba(251, 174, 22, 0.55);
+  border-bottom: 1px dashed rgba(251, 174, 22, 0.55);
 }
 
 .simbolo {
-  font-size: 1.6rem;
-  opacity: 0.35;
-  transform: scale(0.85);
+  position: relative;
+  z-index: 1;
+  font-size: 1.4rem;
+  opacity: 0.3;
+  transform: scale(0.75);
+  filter: blur(0.3px);
 }
 
 .simbolo--linha {
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   opacity: 1;
   transform: scale(1);
+  filter: none;
 }
 
-.caca-niqueis__botao {
-  border-radius: 999px;
-}
-
-.tabela-premios {
+/* Faixa com texto passando, tipo letreiro de jackpot */
+.caca-niqueis__ticker {
   width: 100%;
-  border-collapse: collapse;
-  background-color: var(--branco);
-  border-radius: var(--raio);
   overflow: hidden;
-  box-shadow: var(--sombra);
+  white-space: nowrap;
+  background-color: var(--roxo-profundo);
+  border-radius: 999px;
+  margin-top: 0.9rem;
+  padding: 0.35rem 0;
 }
 
-.tabela-premios caption {
-  text-align: left;
+.caca-niqueis__ticker span {
+  display: inline-block;
+  padding-left: 100%;
+  font-size: 0.7rem;
   font-weight: 700;
-  padding: 0.8rem 1rem;
-  background-color: var(--ameixa);
-  color: var(--texto-claro);
+  letter-spacing: 0.03em;
+  color: var(--dourado-suave);
+  animation: rolar 14s linear infinite;
 }
 
-.tabela-premios td {
-  padding: 0.55rem 1rem;
-  border-top: 1px solid #efe3ec;
+@keyframes rolar {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+
+.caca-niqueis__base {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1.3rem;
+}
+
+/* Alavanca decorativa ao lado do botão */
+.caca-niqueis__alavanca {
+  position: relative;
+  width: 10px;
+  height: 58px;
+  background-color: var(--roxo-profundo);
+  border-radius: 999px;
+  transform: rotate(10deg);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.caca-niqueis__alavanca span {
+  position: absolute;
+  top: -11px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 32% 28%, #ffd98a, var(--dourado) 70%);
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.45);
+}
+
+/* Botão "Girar" como um botão redondo de arcade */
+.caca-niqueis__botao {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #ffd98a 0%, var(--dourado) 55%, #c97207 100%);
+  color: var(--roxo-profundo);
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
   font-size: 0.95rem;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 6px 0 #a85e06, 0 10px 16px rgba(0, 0, 0, 0.4);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
 }
 
-.tabela-premios td:last-child {
-  text-align: right;
-  font-weight: 700;
-  color: var(--roxo-mare);
+.caca-niqueis__botao:hover {
+  transform: translateY(2px);
+  box-shadow: 0 4px 0 #a85e06, 0 6px 10px rgba(0, 0, 0, 0.4);
 }
 
 /* ---------- Roleta ---------- */

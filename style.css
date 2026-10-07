@@ -735,6 +735,7 @@ main.registro section {
   width: 100%;
   height: 100%;
   object-fit: cover;
+   object-position: center 35%; /* mantém o topo, corta só a parte de baixo */
 }
 
 /* Degradê para o título ficar legível sobre a imagem */
